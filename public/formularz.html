@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formularz Zapisu</title>
+
+    <link rel="stylesheet" href="css/global.css" />
+    <link rel="stylesheet" href="css/formularz.css" />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="form-container">
+        <form id="training-form">
+          <h1>Formularz Treningowy</h1>
+          <label for="imie">Imię:</label>
+          <input type="text" id="imie" name="imie" required />
+
+          <label for="nazwisko">Nazwisko:</label>
+          <input type="text" id="nazwisko" name="nazwisko" required />
+
+          <fieldset>
+            <legend>Preferencje rodzaju treningu:</legend>
+            <label class="custom-checkbox">
+              <input type="checkbox" name="preferencje-treningu" value="solo" />
+              <span class="checkmark"></span> Trening w pojedynkę
+            </label>
+            <label class="custom-checkbox">
+              <input type="checkbox" name="preferencje-treningu" value="duo" />
+              <span class="checkmark"></span> Trening w 2 osoby
+            </label>
+            <label class="custom-checkbox">
+              <input type="checkbox" name="preferencje-treningu" value="trio" />
+              <span class="checkmark"></span> Trening w 3 osoby
+            </label>
+          </fieldset>
+
+          <label for="email">E-mail:</label>
+          <input type="email" id="email" name="email" required />
+
+          <label for="telefon">Telefon:</label>
+          <input type="tel" id="telefon" name="phone" required />
+
+          <label for="cel">Cel treningu:</label>
+          <select id="cel" name="cel" required>
+            <option value="weight-loss">Zmniejszenie masy ciała</option>
+            <option value="fat-reduction">Redukcja tkanki tłuszczowej</option>
+            <option value="muscle-gain">Zwiększenie masy mięśniowej</option>
+            <option value="endurance">
+              Wzmocnienie i zwiększenie wydolności organizmu
+            </option>
+          </select>
+
+          <label for="doswiadczenie"
+            >Opisz swoje dotychczasowe doświadczenie:</label
+          >
+          <textarea
+            id="doswiadczenie"
+            name="doswiadczenie"
+            rows="5"
+            required
+          ></textarea>
+
+          <label for="czas"
+            >Jakie dni i w jakich godzinach masz czas na trening?</label
+          >
+          <textarea id="czas" name="czas" rows="5" required></textarea>
+
+          <div class="button-container">
+            <button type="submit">Wyślij</button>
+            <button type="reset" id="reset-btn">Reset</button>
+            <button type="back" onclick="history.back()">Zamknij</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </body>
+  <script src="js/formularz.js"></script>
+</html>

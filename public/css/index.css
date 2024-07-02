@@ -1,0 +1,352 @@
+/* ****************************** */
+/* MAIN NAV MENU */
+/* ****************************** */
+
+.sidebar {
+  width: 3rem;
+  height: 100dvh;
+  margin-left: 0.5rem;
+}
+
+.side-navigation-bar {
+  height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  font-size: 1.6rem;
+  font-weight: 500;
+  gap: 1rem;
+  top: min(100dvh - 85dvh, 50dvh);
+  left: 1rem;
+  color: #b6b6b6;
+}
+
+.navigation-button {
+  width: 1.4rem;
+  height: 7rem;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  letter-spacing: 1px;
+  transition: all 0.5s ease-in-out;
+  border: 1px solid rgb(255, 81, 0);
+  backdrop-filter: blur(10px);
+}
+
+.navigation-button:hover {
+  box-shadow: 0 0 1rem rgb(255, 81, 0);
+  transition: all 0.5s ease-in-out;
+  color: white;
+}
+
+.highlighted {
+  opacity: 100%;
+  color: white;
+  background: rgb(255, 81, 0);
+  box-shadow: 0 0 1rem rgb(255, 81, 0);
+  transition: all 0.5s ease-in-out;
+}
+
+/* ****************************** */
+/* HERO PAGE */
+/* ****************************** */
+
+#p1 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  overflow: hidden;
+}
+
+.hero-box {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* ****************************** */
+/* PAGE TWO */
+/* ****************************** */
+
+#p2 {
+  display: grid;
+  grid-template-columns: repeat(3, 1);
+  grid-template-rows: 15rem auto;
+  backdrop-filter: blur(10px);
+  column-gap: 3rem;
+  /* padding: 2rem; */
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.page-heading {
+  grid-column: 1/4;
+}
+
+.page2-text-box {
+  grid-column: 1/4;
+  display: grid;
+  column-gap: 2rem;
+  grid-template-columns: 1fr 1fr 1fr;
+  padding-right: 2rem;
+}
+
+.p2-buttons-box {
+  display: flex;
+  grid-column: 1/4;
+}
+
+.but2 {
+  background-color: rgb(255, 81, 0);
+  color: black;
+  transition: all 0.5s ease-in-out;
+}
+
+.but2:hover,
+.but2:active {
+  background-color: #f76707;
+  color: white;
+  transition: all 0.5s ease-in-out;
+}
+
+.but3:hover,
+.but3:active {
+  background-color: rgb(255, 81, 0);
+  color: white;
+  transition: all 0.5s ease-in-out;
+}
+
+/* ****************************** */
+/* PAGE THREE */
+/* ****************************** */
+
+#p3 {
+  backdrop-filter: blur(10px);
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.gear-img {
+  width: 150px;
+  height: 600px;
+  object-fit: cover;
+  object-position: 60% 25%;
+  transition: 1s ease-in-out;
+}
+
+.img-container {
+  position: relative;
+  margin-bottom: 2rem;
+}
+
+.margin-left-right {
+  margin-left: 2rem;
+  margin-right: 2rem;
+}
+
+.bold {
+  font-size: 1.4rem;
+  color: rgb(255, 81, 0);
+  font-weight: 700;
+}
+
+/* ****************************** */
+/* OKNO SPRZĘTU */
+/* ****************************** */
+
+.window-gear {
+  width: 100%;
+  padding: 2rem 0 5rem 0;
+  left: 0;
+  right: 0;
+  margin: auto 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+}
+
+/* ****************************** */
+/* SPRZĘT */
+/* OKNO SPRZĘTU PO OTWARCIU */
+/* ****************************** */
+
+.equipment {
+  display: none;
+  position: absolute;
+  width: 100dvw;
+  min-height: 100dvh;
+
+  background-color: black;
+}
+
+.equipment-img {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.equipment-description {
+  margin: 0 0.5rem 1.9rem 1.9rem;
+  font-size: 1rem;
+  line-height: 1.8;
+}
+
+.equ-visible {
+  display: flex;
+  justify-content: center;
+}
+
+.equipment-window {
+  width: 80%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  border: 1px solid rgb(255, 81, 0);
+  position: relative;
+}
+
+.img-con {
+  width: 100%;
+  height: 100%;
+  transition: all 0.5s;
+}
+
+.zamknij {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  position: absolute;
+  color: rgb(255, 81, 0);
+  left: 5px;
+  top: 2px;
+}
+
+/* ****************************** */
+/* PAGE FOUR - CENNIK */
+/* ****************************** */
+
+#p4 {
+  min-height: 800px;
+}
+
+/* ****************************** */
+/* FOOTER */
+/* ****************************** */
+
+.footer {
+  height: 5rem;
+  width: 100%;
+  margin: 2rem 0;
+  padding: 2rem 0;
+  border-top: 1px solid rgb(255, 81, 0);
+  display: flex;
+}
+
+.git {
+  /* text-decoration: none; */
+  color: #f3e7dc;
+}
+
+.git:hover {
+  color: rgb(255, 81, 0);
+  text-decoration: none;
+}
+
+/* ****************************** */
+/* ZMIANA SZEROKOŚCI OKNA */
+/* ****************************** */
+
+@media (max-width: 900px) {
+  .mainheading {
+    font-size: 4rem;
+  }
+
+  .page2-text-box {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    width: 80dvw;
+  }
+
+  .page2-step-box {
+    width: 80dvw;
+  }
+
+  .p2-buttons-box {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .but2 {
+    margin-bottom: 0;
+  }
+
+  .but3 {
+    margin-top: 0;
+  }
+
+  .gear-img {
+    height: 150px;
+    width: 150px;
+  }
+
+  .window {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: start;
+  }
+
+  .equipment-window {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .img-con {
+    width: 100%;
+    height: 30rem;
+  }
+
+  #p1 {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 500px) {
+  .page {
+    /* max-width: 62.5rem; */
+    max-width: 100rem;
+    min-width: 20rem;
+  }
+
+  .mainheading {
+    font-size: 3rem;
+  }
+
+  .button-main {
+    width: 15rem;
+    padding: 1rem 0;
+  }
+
+  #p1 {
+    grid-template-columns: 1fr;
+  }
+
+  .text {
+    /* font-size: 1.2rem; */
+  }
+}
+
+@media (max-height: 600px) {
+  .side-navigation-bar {
+    top: min(100dvh - 99dvh, 50dvh);
+  }
+
+  .sidebar {
+    width: 6rem;
+    /* height: 400px; */
+  }
+
+  .side-navigation-bar {
+    flex-wrap: wrap;
+  }
+}

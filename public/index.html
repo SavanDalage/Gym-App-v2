@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:slnt,wght@-10..0,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>Gym</title>
+
+    <link rel="stylesheet" href="css/global.css" />
+    <link rel="stylesheet" href="css/index.css" />
+  </head>
+
+  <body>
+    <div class="sidebar"></div>
+    <div class="container">
+      <nav class="side-navigation-bar">
+        <div type="button" class="navigation-button highlighted" id="b1">
+          Trener
+        </div>
+        <div type="button" class="navigation-button" id="b2">Plan</div>
+        <div type="button" class="navigation-button" id="b3">Sprzęt</div>
+        <div type="button" class="navigation-button" id="b4">Cennik</div>
+      </nav>
+
+      <div class="page" id="p1">
+        <div class="hero-box">
+          <h1 class="mainheading">Twój trener personalny</h1>
+
+          <p class="text">
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nostrum
+            nulla eos illum, exercitationem id ex, labore doloremque adipisci
+            facilis laborum unde enim, modi asperiores ratione excepturi magnam
+            nobis? Doloribus, distinctio.
+          </p>
+          <p class="text">
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nostrum
+            nulla eos illum, exercitationem id ex, labore doloremque adipisci
+            facilis laborum unde enim, modi asperiores ratione excepturi magnam
+            nobis? Doloribus, distinctio.
+          </p>
+          <div
+            class="button-main but1"
+            type="button"
+            onclick="document.getElementById(`p2`).scrollIntoView();"
+          >
+            ZACZNIJ &darr;
+          </div>
+        </div>
+        <div class="hero-photo"></div>
+      </div>
+
+      <div class="page" id="p2">
+        <div class="mainheading page-heading">Twój plan</div>
+        <div class="page2-text-box">
+          <div class="page2-step-box">
+            <p class="subheading">Krok 1</p>
+            <p class="text">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque
+              deserunt dolor odio sunt illo autem eaque doloremque ratione vel
+              hic consequuntur quos laudantium, quaerat, nulla beatae distinctio
+              voluptates exercitationem rem? Lorem ipsum, dolor sit amet
+              consectetur adipisicing elit. Est, sed enim doloribus eligendi
+              ducimus dolor optio ad distinctio deserunt quasi, excepturi
+              expedita, porro repellendus? Quidem repellat obcaecati ratione
+              eaque minus.
+            </p>
+          </div>
+          <div class="page2-step-box">
+            <p class="subheading">Krok 2</p>
+            <p class="text">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque
+              deserunt dolor odio sunt illo autem eaque doloremque ratione vel
+              hic consequuntur quos laudantium, quaerat, nulla beatae distinctio
+              voluptates exercitationem rem?
+            </p>
+          </div>
+          <div class="page2-step-box">
+            <p class="subheading">Krok 3</p>
+            <p class="text">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque
+              deserunt dolor odio sunt illo autem eaque doloremque ratione vel
+              hic consequuntur quos laudantium, quaerat, nulla beatae distinctio
+              voluptates exercitationem rem?
+            </p>
+          </div>
+        </div>
+        <div class="p2-buttons-box">
+          <a class="button-main but2" type="button" href="formularz.html">
+            Zapisz się
+          </a>
+
+          <a class="button-main but3" type="button" href="gallery.html">
+            Galeria
+          </a>
+        </div>
+      </div>
+
+      <div class="page" id="p3">
+        <div class="mainheading heading">Sprzęt</div>
+        <p class="text">
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Est, sed
+          enim doloribus eligendi ducimus dolor optio ad distinctio deserunt
+          quasi, excepturi expedita, porro repellendus? Quidem repellat
+          obcaecati ratione eaque minus.
+        </p>
+        <p class="text margin-left-right bold">
+          Najedź na wybrany sprzęt i kliknij
+        </p>
+        <div class="window-gear">
+          <div class="img-container">
+            <img class="gear-img" src="img/i00.jpg" loading="lazy" />
+          </div>
+          <div class="img-container">
+            <img class="gear-img" src="img/i01.jpg" loading="lazy" />
+          </div>
+          <div class="img-container">
+            <img class="gear-img" src="img/i02.jpg" loading="lazy" />
+          </div>
+          <div class="img-container">
+            <img class="gear-img" src="img/i03.jpg" loading="lazy" />
+          </div>
+          <div class="img-container">
+            <img class="gear-img" src="img/i05.jpg" loading="lazy" />
+          </div>
+        </div>
+      </div>
+
+      <div class="page" id="p4">
+        <div class="inner"><h1 class="mainheading">Page 4</h1></div>
+      </div>
+      <footer class="footer">
+        <p class="text">Autor: Krzysztof Kondrat</p>
+        <a
+          class="text git"
+          target="”_blank”"
+          href="https://github.com/SavanDalage"
+          >GitHub</a
+        >
+      </footer>
+    </div>
+
+    <!-- okno sprzętu -->
+    <div
+      class="equipment"
+      id="equipment"
+      onclick="document.getElementById(`equipment`).classList.remove(`equ-visible`);"
+    >
+      <div class="equipment-window">
+        <div class="img-con">
+          <img
+            class="equipment-img"
+            id="equipment-img"
+            src="#"
+            loading="lazy"
+          />
+        </div>
+        <div>
+          <div class="equipment-description text" id="eq-des"></div>
+          <div class="equipment-description text" id="eq-des-2"></div>
+          <div class="equipment-description text" id="eq-des-3"></div>
+        </div>
+        <p class="zamknij text">Kliknij w dowolnym miejscu, by zamknąć okno.</p>
+      </div>
+    </div>
+  </body>
+
+  <script src="js/index.js"></script>
+</html>

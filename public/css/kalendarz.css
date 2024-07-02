@@ -1,0 +1,115 @@
+/* ****************************** */
+/* KALENDARZ */
+/* ****************************** */
+
+.kontener {
+  width: 100%;
+  height: 100dvh;
+
+  position: relative;
+}
+
+.kalnedarz {
+  width: 800px;
+  height: auto;
+  margin: 5rem auto;
+  display: flex;
+  overflow-x: hidden;
+}
+
+.miesiac-box {
+  width: 800px;
+
+  display: grid;
+  grid-template-rows: 30 70;
+}
+
+.head {
+  font-size: 1.8rem;
+  background-color: #f76707;
+  padding: 70px 20px;
+  width: 100%;
+  text-align: center;
+}
+
+.miesiac-nazwa {
+  font-size: 3.6rem;
+  margin-bottom: 2rem;
+}
+
+.cal {
+  display: grid;
+  grid-template-rows: 1.2fr 1fr 1fr 1fr 1fr 1fr;
+}
+
+.weekdays {
+  display: flex;
+  justify-content: space-around;
+}
+
+.weekdays li {
+  width: 13.6%;
+  list-style-type: none;
+  margin: 1rem 0;
+  font-size: 1.4rem;
+  text-align: center;
+  font-weight: 600;
+  color: #f76707;
+}
+
+.days {
+  display: flex;
+  justify-content: space-around;
+  background-color: #575757;
+  padding: 1rem 0;
+}
+
+.days li {
+  width: 13.6%;
+  list-style-type: none;
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+.active-day {
+  cursor: pointer;
+}
+
+.clicked {
+  outline: 1px solid #f76707;
+  outline-offset: -1px;
+}
+
+.b1,
+.b2 {
+  height: 125px;
+  width: 100px;
+  background-color: transparent !important;
+  border: 0;
+  opacity: 70%;
+  position: absolute;
+  cursor: pointer;
+}
+
+svg {
+  stroke: rgb(255, 255, 255);
+}
+.arrow:hover {
+  opacity: 50%;
+}
+
+.arrow:active {
+  opacity: 100%;
+}
+
+.b1 {
+  top: 0;
+  left: 50%;
+  transform: translate(-400%, 60%);
+}
+
+.b2 {
+  top: 0;
+  left: 50%;
+  transform: translate(300%, 60%);
+}

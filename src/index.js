@@ -40,7 +40,7 @@ app.post("/", async (req, res) => {
   try {
     const emailData = {
       to: "nekomimiwolf@gmail.com",
-      from: "silownia@peferek.com",
+      from: "nekomimiwolf@gmail.com",
       subject: "Formularz Treningowy - Zgłoszenie",
       text: "New form submission",
       html: `<pre>${JSON.stringify(data, null, 2)}</pre>`,

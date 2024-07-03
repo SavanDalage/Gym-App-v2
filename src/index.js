@@ -29,8 +29,8 @@ app.options("*", cors(corsOptions));
 // Define routes
 app.post("/", (req, res) => {
   console.log("POST / endpoint hit");
-  // console.log("Request Headers: ", req.headers);
-  // console.log("Request Body: ", req.body);
+  console.log("Request Headers: ", req.headers);
+  console.log("Request Body: ", req.body);
 
   const data = req.body;
   res.status(200).json({ message: "Form submission received", data: data });

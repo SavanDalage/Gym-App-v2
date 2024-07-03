@@ -1,6 +1,7 @@
 const express = require("express");
 const cors = require("cors");
 const path = require("path");
+const sgMail = require("@sendgrid/mail");
 
 const app = express();
 
@@ -26,14 +27,38 @@ app.use(cors(corsOptions));
 // Handle preflight requests
 app.options("*", cors(corsOptions));
 
-// Define routes
-app.post("/", (req, res) => {
-  console.log("POST / endpoint hit");
-  console.log("Request Headers: ", req.headers);
-  console.log("Request Body: ", req.body);
+sgMail.setApiKey(process.env.SENDGRID_PASSWORD);
 
+// Define routes
+app.post("/", async (req, res) => {
+  console.log("POST /forms endpoint hit");
   const data = req.body;
-  res.status(200).json({ message: "Form submission received", data: data });
+
+  console.log("Form data received:", data);
+
+  // Placeholder for email sending logic
+  try {
+    const emailData = {
+      to: "nekomimiwolf@gmail.com",
+      from: "silownia@peferek.com",
+      subject: "Formularz Treningowy - Zgłoszenie",
+      text: "New form submission",
+      html: `<pre>${JSON.stringify(data, null, 2)}</pre>`,
+    };
+
+    await sgMail.send(emailData);
+    console.log("Email sent successfully");
+    res.status(200).json({ message: "Email sent successfully" });
+  } catch (error) {
+    console.error(
+      "Error sending email:",
+      error.response ? error.response.body : error
+    );
+    res
+      .status(500)
+      .json({ message: "Error sending email", error: error.toString() });
+  }
+  res.status(200).json({ message: "Form submission received" });
 });
 
 // Start the server

@@ -50,10 +50,9 @@ form.addEventListener("submit", (event) => {
     })
     .then((data) => {
       console.log("Success:", data);
-      alert("Form submitted successfully!");
+      alert("Formularz wysłany.");
     })
     .catch((error) => {
       console.error("Error:", error);
-      alert(`Error submitting form: ${error.message}`);
     });
 });

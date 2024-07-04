@@ -39,7 +39,7 @@ app.post("/", async (req, res) => {
   // Placeholder for email sending logic
   try {
     const emailData = {
-      to: "nekomimiwolf@gmail.com ",
+      to: "bastete@o2.pl",
       from: "bastete@o2.pl",
       subject: "Formularz Treningowy - Zgłoszenie",
       text: "New form submission",
@@ -47,7 +47,6 @@ app.post("/", async (req, res) => {
     };
 
     await sgMail.send(emailData);
-    console.log("Email sent successfully");
     res.status(200).json({ message: "Email sent successfully" });
   } catch (error) {
     console.error(
@@ -58,7 +57,7 @@ app.post("/", async (req, res) => {
       .status(500)
       .json({ message: "Error sending email", error: error.toString() });
   }
-  res.status(200).json({ message: "Form submission received" });
+  res.status(200).json({ message: "Formularz wysłany" });
 });
 
 // Start the server

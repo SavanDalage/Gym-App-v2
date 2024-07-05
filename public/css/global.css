@@ -118,9 +118,9 @@ body {
 
 .page {
   max-width: 100rem;
-  min-width: 27.7rem;
+  min-width: 17.7rem;
 
-  margin: 40px auto;
+  margin: 20px auto;
 
   transition: all 0.5s ease-in-out;
 

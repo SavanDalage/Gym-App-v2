@@ -312,14 +312,18 @@
 }
 
 @media (max-width: 500px) {
+  .container {
+    padding: 0 1rem;
+  }
+
   .page {
     /* max-width: 62.5rem; */
     max-width: 100rem;
-    min-width: 20rem;
+    min-width: 10rem;
   }
 
   .mainheading {
-    font-size: 3rem;
+    font-size: 2.5rem;
   }
 
   .button-main {
@@ -332,7 +336,7 @@
   }
 
   .text {
-    /* font-size: 1.2rem; */
+    font-size: 1.2rem;
   }
 }
 

@@ -50,3 +50,13 @@
   display: flex;
   justify-content: center;
 }
+
+@media (max-width: 500px) {
+  .button-main {
+    width: 15rem;
+    padding: 1rem 0;
+  }
+  .container {
+    padding: 0 1rem;
+  }
+}

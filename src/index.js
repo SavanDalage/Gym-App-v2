@@ -1,7 +1,7 @@
 const express = require("express");
 const cors = require("cors");
 const path = require("path");
-const sgMail = require("@sendgrid/mail");
+// const sgMail = require("@sendgrid/mail");
 
 const app = express();
 
@@ -27,7 +27,7 @@ app.use(cors(corsOptions));
 // Handle preflight requests
 app.options("*", cors(corsOptions));
 
-sgMail.setApiKey(process.env.SENDGRID_PASSWORD);
+// sgMail.setApiKey(process.env.SENDGRID_PASSWORD);
 
 // Define routes
 app.post("/", async (req, res) => {
@@ -35,17 +35,40 @@ app.post("/", async (req, res) => {
   const data = req.body;
 
   console.log("Form data received:", data);
+  console.log(`Stringify data: " ${JSON.stringify(data, null, 2)}`);
 
   try {
+    // const emailData = {
+    //   to: "nekomimiwolf@gmail.com",
+    //   from: "nekomimiwolf@gmail.com",
+    //   subject: "Formularz Treningowy - Zgłoszenie",
+    //   text: "New form submission",
+    //   html: `<pre>${JSON.stringify(data, null, 2)}</pre>`,
+    // };
+
     const emailData = {
-      to: "nekomimiwolf@gmail.com",
-      from: "nekomimiwolf@gmail.com",
-      subject: "Formularz Treningowy - Zgłoszenie",
-      text: "New form submission",
-      html: `<pre>${JSON.stringify(data, null, 2)}</pre>`,
+      from: {
+        email: "nekomimiwolf@gmail.com",
+      },
+      personalization: [
+        {
+          to: [
+            {
+              email: "nekomimiwolf@gmail.com",
+              name: "Formularz zapisu",
+            },
+          ],
+          dynamic_template_data: {
+            name: "Cos",
+          },
+        },
+      ],
+      template_id: "d-f25c6872e5a04234b0ef8748a2eaeba4",
     };
 
-    await sgMail.send(emailData);
+    console.log(emailData);
+
+    // await sgMail.send(emailData);
     res.status(200).json({ message: "Email sent successfully" });
   } catch (error) {
     console.error(

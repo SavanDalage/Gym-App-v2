@@ -75,7 +75,7 @@ app.post("/", async (req, res) => {
     console.log(emailData);
 
     // await sgMail.send(emailData);
-    res.status(200).json({ message: "Email sent successfully" });
+    // res.status(200).json({ message: "Email sent successfully" });
   } catch (error) {
     console.error(
       "Error sending email:",

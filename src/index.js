@@ -36,7 +36,6 @@ app.post("/", async (req, res) => {
 
   console.log("Form data received:", data);
 
-  // Placeholder for email sending logic
   try {
     const emailData = {
       to: "nekomimiwolf@gmail.com",

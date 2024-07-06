@@ -40,7 +40,27 @@ app.post("/", async (req, res) => {
       from: "nekomimiwolf@gmail.com",
       subject: "Formularz Treningowy - Zgłoszenie",
       text: "New form submission",
-      html: `<pre>${JSON.stringify(data)},${JSON.stringify(data.imie)}</pre>`,
+      html: `<pre>Imię: ${JSON.stringify(
+        data.imie
+      )}, nazwisko: ${JSON.stringify(data.nazwisko)}, e-mail: ${JSON.stringify(
+        data.email
+      )}, telefon: ${JSON.stringify(data.phone)}, czas: ${JSON.stringify(
+        data.czas
+      )}, doświadczenie: ${JSON.stringify(
+        data.doswiadczenie
+      )}, preferencje treningowe: ${
+        data.preferencje_treningu1
+          ? JSON.stringify(data.preferencje_treningu1)
+          : ""
+      }, ${
+        data.preferencje_treningu2
+          ? JSON.stringify(data.preferencje_treningu2)
+          : ""
+      }, ${
+        data.preferencje_treningu3
+          ? JSON.stringify(data.preferencje_treningu3)
+          : ""
+      }</pre>`,
     };
 
     // const emailData = {

@@ -36,7 +36,7 @@ app.post("/", async (req, res) => {
 
   try {
     const emailData = {
-      to: "nekomimiwolf@gmail.com",
+      to: "bastete@o2.pl",
       from: "nekomimiwolf@gmail.com",
       subject: "Formularz Treningowy - Zgłoszenie",
       text: "New form submission",

@@ -37,7 +37,7 @@ app.post("/", async (req, res) => {
   try {
     const emailData = {
       to: "bastete@02.pl",
-      from: "nekomimiwolf@gmail.com",
+      from: "bastete@02.pl",
       subject: "Formularz Treningowy - Zgłoszenie",
       text: "New form submission",
       html: `<pre><p><strong>Nowy formularz</strong></p>

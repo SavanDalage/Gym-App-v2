@@ -34,13 +34,13 @@ app.post("/", async (req, res) => {
   console.log("POST /forms endpoint hit");
   const data = req.body;
   // const stringifyData = JSON.parse(data);
-  console.log(data);
-  const stringifyData = JSON.stringify(data);
-  const stringifyData2 = JSON.stringify(data, null, 2);
+  // console.log(data);
+  // const stringifyData = JSON.stringify(data);
+  // const stringifyData2 = JSON.stringify(data, null, 2);
 
-  console.log("Form data received:", data);
-  console.log(`parse data: " ${stringifyData}`);
-  console.log(`Stringify data 2: " ${stringifyData2}`);
+  // console.log("Form data received:", data);
+  // console.log(`parse data: " ${stringifyData}`);
+  // console.log(`Stringify data 2: " ${stringifyData2}`);
 
   // console.log(`${stringifyData2[0]}`);
   // console.log(`${stringifyData2[1]}`);
@@ -52,6 +52,8 @@ app.post("/", async (req, res) => {
   // console.log(`${stringifyData2[7]}`);
   // console.log(`${stringifyData2[8]}`);
   // console.log(`${stringifyData2[9]}`);
+
+  console.log(data[0]);
 
   try {
     // const emailData = {

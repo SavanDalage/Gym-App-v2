@@ -42,110 +42,225 @@ app.post("/", async (req, res) => {
       text: "New form submission",
       // html: `<pre>${JSON.stringify(data)}</pre>`,
       html: `<!DOCTYPE html>
-<html lang="pl">
+<html lang="en">
   <head>
-    <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Formularz Zapisu</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Simple Transactional Email</title>
     <style media="all" type="text/css">
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
-
-      html {
-        color: #f3e7dc;
-        font-size: 1rem;
-      }
+      /* -------------------------------------
+    GLOBAL RESETS
+------------------------------------- */
 
       body {
-        font-family: "Inter", sans-serif;
-        height: 100dvh;
-        background-color: black;
-        display: flex;
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-        position: relative;
+        font-family: Helvetica, sans-serif;
+        -webkit-font-smoothing: antialiased;
+        font-size: 16px;
+        line-height: 1.3;
+        -ms-text-size-adjust: 100%;
+        -webkit-text-size-adjust: 100%;
       }
 
-      /* ****************************** */
-      /* Reusable code */
-      /* ****************************** */
+      table {
+        border-collapse: separate;
+        mso-table-lspace: 0pt;
+        mso-table-rspace: 0pt;
+        width: 100%;
+      }
+
+      table td {
+        font-family: Helvetica, sans-serif;
+        font-size: 16px;
+        vertical-align: top;
+      }
+      /* -------------------------------------
+    BODY & CONTAINER
+------------------------------------- */
+
+      body {
+        background-color: #f4f5f6;
+        margin: 0;
+        padding: 0;
+      }
+
+      .body {
+        background-color: #f4f5f6;
+        width: 100%;
+      }
 
       .container {
+        margin: 0 auto !important;
+        max-width: 600px;
+        padding: 0;
+        padding-top: 24px;
+        width: 600px;
+      }
+
+
+      /* -------------------------------------
+    HEADER, FOOTER, MAIN
+------------------------------------- */
+
+      .main {
+        background: #ffffff;
+        border: 1px solid #eaebed;
+        border-radius: 16px;
         width: 100%;
-        height: 100dvh;
-        position: relative;
-        overflow-y: scroll;
-        scroll-behavior: smooth;
       }
 
-      .form-container {
-        max-width: 700px;
-        padding: 20px;
-        border: 1px solid rgb(255, 81, 0);
-        margin: 1rem auto;
+      .wrapper {
+        box-sizing: border-box;
+        padding: 24px;
       }
 
-      form {
-        display: flex;
-        flex-direction: column;
-      }
-
-      h1 {
-        color: #f76707;
-        text-align: center;
-        margin-bottom: 20px;
-        font-size: 2rem;
-      }
+      /* -------------------------------------
+    TYPOGRAPHY
+------------------------------------- */
 
       p {
-        margin: 10px 0 5px;
+        font-family: Helvetica, sans-serif;
+        font-size: 16px;
+        font-weight: normal;
+        margin: 0;
+        margin-bottom: 16px;
       }
 
-      @media (max-width: 500px) {
-        .button-container {
-          display: flex;
-          flex-direction: column;
-          gap: 1rem;
+      /* -------------------------------------
+    OTHER STYLES THAT MIGHT BE USEFUL
+------------------------------------- */
+
+      .preheader {
+        color: transparent;
+        display: none;
+        height: 0;
+        max-height: 0;
+        max-width: 0;
+        opacity: 0;
+        overflow: hidden;
+        mso-hide: all;
+        visibility: hidden;
+        width: 0;
+      }
+
+      /* -------------------------------------
+    RESPONSIVE AND MOBILE FRIENDLY STYLES
+------------------------------------- */
+
+      @media only screen and (max-width: 640px) {
+        .main p,
+        .main td,
+        .main span {
+          font-size: 16px !important;
+        }
+        .wrapper {
+          padding: 8px !important;
+        }
+
+        .container {
+          padding: 0 !important;
+          padding-top: 8px !important;
+          width: 100% !important;
+        }
+        .main {
+          border-left-width: 0 !important;
+          border-radius: 0 !important;
+          border-right-width: 0 !important;
+        }
+      }
+      /* -------------------------------------
+    PRESERVE THESE STYLES IN THE HEAD
+------------------------------------- */
+
+      @media all {
+        .ExternalClass {
+          width: 100%;
+        }
+        .ExternalClass,
+        .ExternalClass p,
+        .ExternalClass span,
+        .ExternalClass font,
+        .ExternalClass td,
+        .ExternalClass div {
+          line-height: 100%;
+        }
+
+        #MessageViewBody a {
+          color: inherit;
+          text-decoration: none;
+          font-size: inherit;
+          font-family: inherit;
+          font-weight: inherit;
+          line-height: inherit;
         }
       }
     </style>
   </head>
   <body>
-    <div class="container">
-      <div class="form-container">
-        <form id="training-form">
-          <h1>Formularz nadesłany przez</h1>
-          <p>Imię: ${data.imie}</p>
-          <p for="nazwisko">Nazwisko: ${data.nazwisko}</p>
-          <p>Preferencje rodzaju treningu:</p>
-          <p>Trening w pojedynkę: ${
-            data.preferencje_treningu1 ? "tak" : "nie"
-          }</p>
-          <p>Trening w 2 osoby: ${
-            data.preferencje_treningu2 ? "tak" : "nie"
-          }</p>
-          <p>Trening w 3 osoby: ${
-            data.preferencje_treningu3 ? "tak" : "nie"
-          }</p>
+    <table
+      role="presentation"
+      border="0"
+      cellpadding="0"
+      cellspacing="0"
+      class="body"
+    >
+      <tr>
+        <td>&nbsp;</td>
+        <td class="container">
+          <div class="content">
+            <table
+              role="presentation"
+              border="0"
+              cellpadding="0"
+              cellspacing="0"
+              class="main"
+            >
+              <!-- START MAIN CONTENT AREA -->
+              <tr>
+                <td class="wrapper">
+                  <p><strong>Nowy formularz</strong></p>
+                  <p>Imię: ${data.imie}</p>
+                  <p>Nazwisko: ${data.nazwisko}</p>
+                  <p>Preferencje rodzaju treningu:</p>
+                  <p>
+                    Trening w pojedynkę: ${
+                      data.preferencje_treningu1 ? "tak" : "nie"
+                    }
+                  </p>
+                  <p>
+                    Trening w 2 osoby: ${
+                      data.preferencje_treningu2 ? "tak" : "nie"
+                    }
+                  </p>
+                  <p>
+                    Trening w 3 osoby: ${
+                      data.preferencje_treningu3 ? "tak" : "nie"
+                    }
+                  </p>
 
-          <p>E-mail: ${data.email}</p>
+                  <p>E-mail: ${data.email}</p>
 
-          <p>Telefon: ${data.phone}</p>
+                  <p>Telefon: ${data.phone}</p>
 
-          <p>Cel treningu: ${data.cel}</p>
+                  <p>Cel treningu: ${data.cel}</p>
 
-          <p>Dotychczasowe doświadczenie: ${data.doswiadczenie}</p>
+                  <p>Dotychczasowe doświadczenie: ${data.doswiadczenie}</p>
 
-          <p>Preferowane dni i godziny treningu: ${data.czas}</p>
-        </form>
-      </div>
-    </div>
+                  <p>Preferowane dni i godziny treningu: ${data.czas}</p>
+                </td>
+              </tr>
+
+              <!-- END MAIN CONTENT AREA -->
+            </table>
+
+            <!-- END CENTERED WHITE CONTAINER -->
+          </div>
+        </td>
+        <td>&nbsp;</td>
+      </tr>
+    </table>
   </body>
 </html>
+
 `,
     };
 

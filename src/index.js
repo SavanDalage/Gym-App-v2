@@ -34,53 +34,43 @@ app.post("/", async (req, res) => {
   console.log("POST /forms endpoint hit");
   const data = req.body;
 
-  // imie: "Kris",
-  // nazwisko: "Kondrat",
-  // preferencje_treningu1: "solo",
-  // preferencje_treningu2: "duo",
-  // email: "bastete@o2.pl",
-  // phone: "508119613",
-  // cel: "weight-loss",
-  // doswiadczenie: "b",
-  // czas: "b",
-
   try {
-    // const emailData = {
-    //   to: "nekomimiwolf@gmail.com",
-    //   from: "nekomimiwolf@gmail.com",
-    //   subject: "Formularz Treningowy - Zgłoszenie",
-    //   text: "New form submission",
-    //   html: `<pre>${JSON.stringify(data, null, 2)}</pre>`,
-    // };
-
     const emailData = {
-      from: {
-        email: "nekomimiwolf@gmail.com",
-      },
-      personalization: [
-        {
-          to: [
-            {
-              email: "nekomimiwolf@gmail.com",
-              name: data.imie,
-            },
-          ],
-          dynamic_template_data: {
-            name: data.imie,
-            nazwisko: data.nazwisko,
-            preferencje_treningu1: data.preferencje_treningu1 || "nie",
-            preferencje_treningu2: data.preferencje_treningu2 || "nie",
-            preferencje_treningu3: data.preferencje_treningu3 || "nie",
-            email: data.email,
-            phone: data.phone,
-            cel: data.cel,
-            doswiadczenie: data.doswiadczenie,
-            czas: data.czas,
-          },
-        },
-      ],
-      template_id: "d-f25c6872e5a04234b0ef8748a2eaeba4",
+      to: "nekomimiwolf@gmail.com",
+      from: "nekomimiwolf@gmail.com",
+      subject: "Formularz Treningowy - Zgłoszenie",
+      text: "New form submission",
+      html: `<pre>${data}</pre>`,
     };
+
+    // const emailData = {
+    //   from: {
+    //     email: "nekomimiwolf@gmail.com",
+    //   },
+    //   personalization: [
+    //     {
+    //       to: [
+    //         {
+    //           email: "nekomimiwolf@gmail.com",
+    //           name: data.imie,
+    //         },
+    //       ],
+    //       dynamic_template_data: {
+    //         name: data.imie,
+    //         nazwisko: data.nazwisko,
+    //         preferencje_treningu1: data.preferencje_treningu1 || "nie",
+    //         preferencje_treningu2: data.preferencje_treningu2 || "nie",
+    //         preferencje_treningu3: data.preferencje_treningu3 || "nie",
+    //         email: data.email,
+    //         phone: data.phone,
+    //         cel: data.cel,
+    //         doswiadczenie: data.doswiadczenie,
+    //         czas: data.czas,
+    //       },
+    //     },
+    //   ],
+    //   template_id: "d-f25c6872e5a04234b0ef8748a2eaeba4",
+    // };
 
     console.log(emailData);
 

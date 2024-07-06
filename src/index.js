@@ -35,47 +35,47 @@ app.post("/", async (req, res) => {
   const data = req.body;
 
   try {
-    // const emailData = {
-    //   to: "nekomimiwolf@gmail.com",
-    //   from: "nekomimiwolf@gmail.com",
-    //   subject: "Formularz Treningowy - Zgłoszenie",
-    //   text: "New form submission",
-    //   html: `<pre>${JSON.stringify(data)}</pre>`,
-    // };
-
     const emailData = {
-      from: {
-        email: "nekomimiwolf@gmail.com",
-      },
-      personalization: [
-        {
-          to: [
-            {
-              email: "nekomimiwolf@gmail.com",
-              name: data.imie,
-            },
-          ],
-          dynamic_template_data: {
-            name: data.imie,
-            nazwisko: data.nazwisko,
-            preferencje_treningu1: data.preferencje_treningu1 || "nie",
-            preferencje_treningu2: data.preferencje_treningu2 || "nie",
-            preferencje_treningu3: data.preferencje_treningu3 || "nie",
-            email: data.email,
-            phone: data.phone,
-            cel: data.cel,
-            doswiadczenie: data.doswiadczenie,
-            czas: data.czas,
-          },
-        },
-      ],
-      template_id: "d-f25c6872e5a04234b0ef8748a2eaeba4",
+      to: "nekomimiwolf@gmail.com",
+      from: "nekomimiwolf@gmail.com",
+      subject: "Formularz Treningowy - Zgłoszenie",
+      text: "New form submission",
+      html: `<pre>${JSON.stringify(data)}</pre>`,
     };
+
+    // const emailData = {
+    //   from: {
+    //     email: "nekomimiwolf@gmail.com",
+    //   },
+    //   personalization: [
+    //     {
+    //       to: [
+    //         {
+    //           email: "nekomimiwolf@gmail.com",
+    //           name: data.imie,
+    //         },
+    //       ],
+    //       dynamic_template_data: {
+    //         name: data.imie,
+    //         nazwisko: data.nazwisko,
+    //         preferencje_treningu1: data.preferencje_treningu1 || "nie",
+    //         preferencje_treningu2: data.preferencje_treningu2 || "nie",
+    //         preferencje_treningu3: data.preferencje_treningu3 || "nie",
+    //         email: data.email,
+    //         phone: data.phone,
+    //         cel: data.cel,
+    //         doswiadczenie: data.doswiadczenie,
+    //         czas: data.czas,
+    //       },
+    //     },
+    //   ],
+    //   template_id: "d-f25c6872e5a04234b0ef8748a2eaeba4",
+    // };
 
     console.log(emailData);
 
-    // await sgMail.send(emailData);
-    // res.status(200).json({ message: "Email sent successfully" });
+    await sgMail.send(emailData);
+    res.status(200).json({ message: "Email sent successfully" });
   } catch (error) {
     console.error(
       "Error sending email:",
@@ -85,7 +85,7 @@ app.post("/", async (req, res) => {
       .status(500)
       .json({ message: "Error sending email", error: error.toString() });
   }
-  res.status(200).json({ message: "Formularz wysłany" });
+  // res.status(200).json({ message: "Formularz wysłany" });
 });
 
 // Start the server

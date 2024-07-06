@@ -30,7 +30,7 @@ form.addEventListener("submit", (event) => {
 
   console.log(dataJson);
 
-  fetch("http://127.0.0.1:5500/", {
+  fetch("/", {
     method: "POST",
     headers: {
       Accept: "application/json",

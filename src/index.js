@@ -47,9 +47,9 @@ app.post("/", async (req, res) => {
       
       E-mail: ${JSON.stringify(data.email)}, 
       
-      Telefon: ${JSON.stringify(data.phone)}, czas: ${JSON.stringify(
-        data.czas
-      )}, 
+      Telefon: ${JSON.stringify(data.phone)}, 
+      
+      Czas: ${JSON.stringify(data.czas)}, 
       
       Doświadczenie: ${JSON.stringify(data.doswiadczenie)}, 
       

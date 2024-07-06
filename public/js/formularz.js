@@ -34,7 +34,7 @@ form.addEventListener("submit", (event) => {
     method: "POST",
     headers: {
       Accept: "application/json",
-      "X-Content-Type": "application/json",
+      "Content-Type": "application/json",
     },
     body: dataJson,
   })

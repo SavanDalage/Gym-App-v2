@@ -40,37 +40,7 @@ app.post("/", async (req, res) => {
       from: "bastete@02.pl",
       subject: "Formularz Treningowy - Zgłoszenie",
       text: "New form submission",
-      html: `<pre><p><strong>Nowy formularz</strong></p>
-                  <p>Imię: ${data.imie}</p>
-                  <p>Nazwisko: ${data.nazwisko}</p>
-                  <p>Preferencje rodzaju treningu:</p>
-                  <p>
-                    Trening w pojedynkę: ${
-                      data.preferencje_treningu1 ? "tak" : "nie"
-                    }
-                  </p>
-                  <p>
-                    Trening w 2 osoby: ${
-                      data.preferencje_treningu2 ? "tak" : "nie"
-                    }
-                  </p>
-                  <p>
-                    Trening w 3 osoby: ${
-                      data.preferencje_treningu3 ? "tak" : "nie"
-                    }
-                  </p>
-
-                  <p>E-mail: ${data.email}</p>
-
-                  <p>Telefon: ${data.phone}</p>
-
-                  <p>Cel treningu: ${data.cel}</p>
-
-                  <p>Dotychczasowe doświadczenie: ${data.doswiadczenie}</p>
-
-                  <p>Preferowane dni i godziny treningu: ${
-                    data.czas
-                  }</p></pre>`,
+      html: `<pre>${JSON.stringify(data)}</pre>`,
       //       html: `<!DOCTYPE html>
       // <html lang="en">
       //   <head>

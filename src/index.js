@@ -46,27 +46,27 @@ app.post("/", async (req, res) => {
     //   html: `<pre>${JSON.stringify(data, null, 2)}</pre>`,
     // };
 
-    // const emailData = {
-    //   from: {
-    //     email: "nekomimiwolf@gmail.com",
-    //   },
-    //   personalization: [
-    //     {
-    //       to: [
-    //         {
-    //           email: "nekomimiwolf@gmail.com",
-    //           name: "Formularz zapisu",
-    //         },
-    //       ],
-    //       dynamic_template_data: {
-    //         name: "Cos",
-    //       },
-    //     },
-    //   ],
-    //   template_id: "d-f25c6872e5a04234b0ef8748a2eaeba4",
-    // };
+    const emailData = {
+      from: {
+        email: "nekomimiwolf@gmail.com",
+      },
+      personalization: [
+        {
+          to: [
+            {
+              email: "nekomimiwolf@gmail.com",
+              name: "Formularz zapisu",
+            },
+          ],
+          dynamic_template_data: {
+            name: "Cos",
+          },
+        },
+      ],
+      template_id: "d-f25c6872e5a04234b0ef8748a2eaeba4",
+    };
 
-    // console.log(emailData);
+    console.log(emailData);
 
     // await sgMail.send(emailData);
     res.status(200).json({ message: "Email sent successfully" });

@@ -1,7 +1,7 @@
 const express = require("express");
 const cors = require("cors");
 const path = require("path");
-// const sgMail = require("@sendgrid/mail");
+const sgMail = require("@sendgrid/mail");
 
 const app = express();
 
@@ -27,33 +27,22 @@ app.use(cors(corsOptions));
 // Handle preflight requests
 app.options("*", cors(corsOptions));
 
-// sgMail.setApiKey(process.env.SENDGRID_PASSWORD);
+sgMail.setApiKey(process.env.SENDGRID_PASSWORD);
 
 // Define routes
 app.post("/", async (req, res) => {
   console.log("POST /forms endpoint hit");
   const data = req.body;
-  // const stringifyData = JSON.parse(data);
-  // console.log(data);
-  // const stringifyData = JSON.stringify(data);
-  // const stringifyData2 = JSON.stringify(data, null, 2);
 
-  // console.log("Form data received:", data);
-  // console.log(`parse data: " ${stringifyData}`);
-  // console.log(`Stringify data 2: " ${stringifyData2}`);
-
-  // console.log(`${stringifyData2[0]}`);
-  // console.log(`${stringifyData2[1]}`);
-  // console.log(`${stringifyData2[2]}`);
-  // console.log(`${stringifyData2[3]}`);
-  // console.log(`${stringifyData2[4]}`);
-  // console.log(`${stringifyData2[5]}`);
-  // console.log(`${stringifyData2[6]}`);
-  // console.log(`${stringifyData2[7]}`);
-  // console.log(`${stringifyData2[8]}`);
-  // console.log(`${stringifyData2[9]}`);
-
-  console.log(`${data.name}`);
+  // imie: "Kris",
+  // nazwisko: "Kondrat",
+  // preferencje_treningu1: "solo",
+  // preferencje_treningu2: "duo",
+  // email: "bastete@o2.pl",
+  // phone: "508119613",
+  // cel: "weight-loss",
+  // doswiadczenie: "b",
+  // czas: "b",
 
   try {
     // const emailData = {
@@ -73,11 +62,20 @@ app.post("/", async (req, res) => {
           to: [
             {
               email: "nekomimiwolf@gmail.com",
-              name: "Formularz zapisu",
+              name: data.imie,
             },
           ],
           dynamic_template_data: {
-            name: "Cos",
+            name: data.imie,
+            nazwisko: data.nazwisko,
+            preferencje_treningu1: data.preferencje_treningu1 || "nie",
+            preferencje_treningu2: data.preferencje_treningu2 || "nie",
+            preferencje_treningu3: data.preferencje_treningu3 || "nie",
+            email: data.email,
+            phone: data.phone,
+            cel: data.cel,
+            doswiadczenie: data.doswiadczenie,
+            czas: data.czas,
           },
         },
       ],

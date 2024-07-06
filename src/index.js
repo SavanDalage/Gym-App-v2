@@ -33,11 +33,11 @@ app.options("*", cors(corsOptions));
 app.post("/", async (req, res) => {
   console.log("POST /forms endpoint hit");
   const data = req.body;
-  const stringifyData = JSON.stringify(data);
+  const stringifyData = JSON.parse(data);
   const stringifyData2 = JSON.stringify(data, null, 2);
 
   console.log("Form data received:", data);
-  console.log(`Stringify data: " ${stringifyData}`);
+  console.log(`parse data: " ${stringifyData}`);
   console.log(`Stringify data 2: " ${stringifyData2}`);
 
   // console.log(`${stringifyData2[0]}`);

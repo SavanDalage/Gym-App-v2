@@ -53,7 +53,7 @@ app.post("/", async (req, res) => {
   // console.log(`${stringifyData2[8]}`);
   // console.log(`${stringifyData2[9]}`);
 
-  console.log(data[0]);
+  console.log(`${data.name}`);
 
   try {
     // const emailData = {

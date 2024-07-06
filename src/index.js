@@ -39,8 +39,8 @@ app.post("/", async (req, res) => {
   // Placeholder for email sending logic
   try {
     const emailData = {
-      to: "bastete@o2.pl",
-      from: "bastete@o2.pl",
+      to: "nekomimiwolf@gmail.com",
+      from: "nekomimiwolf@gmail.com",
       subject: "Formularz Treningowy - Zgłoszenie",
       text: "New form submission",
       html: `<pre>${JSON.stringify(data, null, 2)}</pre>`,

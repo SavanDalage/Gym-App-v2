@@ -36,12 +36,44 @@ app.post("/", async (req, res) => {
 
   try {
     const emailData = {
-      to: "bastete@02.pl",
-      from: "bastete@02.pl",
+      to: "nekomimiwolf@gmail.com",
+      from: "nekomimiwolf@gmail.com",
       subject: "Formularz Treningowy - Zgłoszenie",
       text: "New form submission",
       html: `<pre>${JSON.stringify(data)}</pre>`,
     };
+
+    // const emailData = {
+    //   from: "nekomimiwolf@gmail.com",
+    //   template_id: "d-f25c6872e5a04234b0ef8748a2eaeba4",
+    //   personalization: [
+    //     {
+    //       to: [
+    //         {
+    //           email: "nekomimiwolf@gmail.com",
+    //         },
+    //       ],
+    //       dynamic_template_data: {
+    //         imie: data.imie,
+    //         nazwisko: data.nazwisko,
+    //         preferencje_treningu1: data.preferencje_treningu1
+    //           ? data.preferencje_treningu1
+    //           : "nie",
+    //         preferencje_treningu2: data.preferencje_treningu2
+    //           ? data.preferencje_treningu2
+    //           : "nie",
+    //         preferencje_treningu3: data.preferencje_treningu3
+    //           ? data.preferencje_treningu3
+    //           : "nie",
+    //         email: data.email,
+    //         phone: data.phone,
+    //         cel: data.cel,
+    //         doswiadczenie: data.doswiadczenie,
+    //         czas: data.czas,
+    //       },
+    //     },
+    //   ],
+    // };
 
     console.log(emailData);
 

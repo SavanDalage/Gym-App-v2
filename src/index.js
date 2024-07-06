@@ -40,16 +40,16 @@ app.post("/", async (req, res) => {
   console.log(`Stringify data: " ${stringifyData}`);
   console.log(`Stringify data 2: " ${stringifyData2}`);
 
-  console.log(stringifyData2.imie);
-  console.log(stringifyData2.nazwisko);
-  console.log(stringifyData2.preferencje_treningu1);
-  console.log(stringifyData2.preferencje_treningu2);
-  console.log(stringifyData2.preferencje_treningu3);
-  console.log(stringifyData2.email);
-  console.log(stringifyData2.phone);
-  console.log(stringifyData2.cel);
-  console.log(stringifyData2.doswiadczenie);
-  console.log(stringifyData2.czas);
+  console.log(stringifyData2[0]);
+  console.log(stringifyData2[1]);
+  console.log(stringifyData2[2]);
+  console.log(stringifyData2[3]);
+  console.log(stringifyData2[4]);
+  console.log(stringifyData2[5]);
+  console.log(stringifyData2[6]);
+  console.log(stringifyData2[7]);
+  console.log(stringifyData2[8]);
+  console.log(stringifyData2[9]);
 
   try {
     // const emailData = {

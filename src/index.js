@@ -34,11 +34,9 @@ app.post("/", async (req, res) => {
   console.log("POST /forms endpoint hit");
   const data = req.body;
   // const stringifyData = JSON.parse(data);
+  console.log(data);
   const stringifyData = JSON.stringify(data);
   const stringifyData2 = JSON.stringify(data, null, 2);
-
-  console.log(typeof stringifyData);
-  console.log(typeof stringifyData2);
 
   console.log("Form data received:", data);
   console.log(`parse data: " ${stringifyData}`);

@@ -12,7 +12,6 @@ router
   })
   .post(async (req, res) => {
     console.log("POST /forms endpoint hit");
-    const data = req.body;
 
     try {
       const data = req.body;

@@ -18,7 +18,7 @@ router
       const emailHtml = createEmailTemplate(data);
 
       const emailData = {
-        to: "izerka@yahoo.com",
+        to: "peferek@o2.pl",
         from: "nekomimiwolf@gmail.com",
         subject: "Formularz Treningowy - Zgłoszenie",
         text: "New form submission",

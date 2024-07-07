@@ -62,8 +62,4 @@ router
     }
   });
 
-// router.route("/").get((req, res) => {
-//   res.sendFile(path.join(publicPath, "index.html"));
-// });
-
 module.exports = router;

@@ -61,7 +61,7 @@ router
     // res.status(200).json({ message: "Formularz wysłany" });
   });
 
-app.get("/", (req, res) => {
+router.route("/").get((req, res) => {
   res.sendFile(path.join(publicPath, "index.html"));
 });
 

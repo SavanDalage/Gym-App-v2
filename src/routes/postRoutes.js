@@ -24,19 +24,42 @@ router
 <head>
     <meta charset="UTF-8">
     <title>Formularz kontaktowy</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            width: 50%;
+            margin: 0 auto;
+            border: 2px solid #000;
+            padding: 20px;
+            text-align: center;
+        }
+        .container p {
+            margin: 10px 0;
+        }
+        .container strong {
+            display: inline-block;
+            width: 150px;
+            text-align: right;
+            margin-right: 10px;
+        }
+    </style>
 </head>
 <body>
-    <p><strong>Imię:</strong> ${data.imie}</p>
-    <p><strong>Nazwisko:</strong> ${data.nazwisko}</p>
-    <p><strong>E-mail:</strong> ${data.email}</p>
-    <p><strong>Telefon:</strong> ${data.phone}</p>
-    <p><strong>Czas:</strong> ${data.czas}</p>
-    <p><strong>Doświadczenie:</strong> ${data.doswiadczenie}</p>
-    <p><strong>Preferencje treningowe:</strong> ${
-      data.preferencje_treningu1 ? data.preferencje_treningu1 + " " : ""
-    } ${data.preferencje_treningu2 ? data.preferencje_treningu2 + " " : ""} ${
-          data.preferencje_treningu3 ? data.preferencje_treningu3 : ""
-        }</p>
+    <div class="container">
+        <p><strong>Imię:</strong> ${data.imie}</p>
+        <p><strong>Nazwisko:</strong> ${data.nazwisko}</p>
+        <p><strong>E-mail:</strong> ${data.email}</p>
+        <p><strong>Telefon:</strong> ${data.phone}</p>
+        <p><strong>Czas:</strong> ${data.czas}</p>
+        <p><strong>Doświadczenie:</strong> ${data.doswiadczenie}</p>
+        <p><strong>Preferencje treningowe:</strong> ${
+          data.preferencje_treningu1 ? data.preferencje_treningu1 + " " : ""
+        } ${
+          data.preferencje_treningu2 ? data.preferencje_treningu2 + " " : ""
+        } ${data.preferencje_treningu3 ? data.preferencje_treningu3 : ""}</p>
+    </div>
 </body>
 </html>`,
       };

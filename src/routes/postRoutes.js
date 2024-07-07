@@ -20,7 +20,7 @@ router
         subject: "Formularz Treningowy - Zgłoszenie",
         text: "New form submission",
         html: `<pre>
-        <p color="rgb(255, 81, 0)">Imię:</p> ${JSON.stringify(data.imie)}, 
+        Imię: ${JSON.stringify(data.imie)}, 
         
         Nazwisko: ${JSON.stringify(data.nazwisko)}, 
         

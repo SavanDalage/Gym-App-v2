@@ -2,7 +2,7 @@ const path = require("path");
 const express = require("express");
 const rateLimit = require("express-rate-limit");
 const cors = require("cors");
-const sgMail = require("@sendgrid/mail");
+// const sgMail = require("@sendgrid/mail");
 const xss = require("xss-clean");
 const mongoSanitize = require("express-mongo-sanitize");
 
@@ -39,7 +39,7 @@ app.options("*", cors(corsOptions));
 // Data sanitization against XSS
 app.use(xss());
 
-sgMail.setApiKey(process.env.SENDGRID_PASSWORD);
+// sgMail.setApiKey(process.env.SENDGRID_PASSWORD);
 
 const limiter = rateLimit({
   max: 100,

@@ -19,32 +19,26 @@ router
         from: "nekomimiwolf@gmail.com",
         subject: "Formularz Treningowy - Zgłoszenie",
         text: "New form submission",
-        html: `<pre>
-        Imię: ${JSON.stringify(data.imie)}, 
-        
-        Nazwisko: ${JSON.stringify(data.nazwisko)}, 
-        
-        E-mail: ${JSON.stringify(data.email)}, 
-        
-        Telefon: ${JSON.stringify(data.phone)}, 
-        
-        Czas: ${JSON.stringify(data.czas)}, 
-        
-        Doświadczenie: ${JSON.stringify(data.doswiadczenie)}, 
-        
-        Preferencje treningowe: ${
-          data.preferencje_treningu1
-            ? JSON.stringify(data.preferencje_treningu1)
-            : ""
-        } ${
-          data.preferencje_treningu2
-            ? JSON.stringify(data.preferencje_treningu2)
-            : ""
-        } ${
-          data.preferencje_treningu3
-            ? JSON.stringify(data.preferencje_treningu3)
-            : ""
-        }.</pre>`,
+        html: `<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Formularz kontaktowy</title>
+</head>
+<body>
+    <p><strong>Imię:</strong> ${data.imie}</p>
+    <p><strong>Nazwisko:</strong> ${data.nazwisko}</p>
+    <p><strong>E-mail:</strong> ${data.email}</p>
+    <p><strong>Telefon:</strong> ${data.phone}</p>
+    <p><strong>Czas:</strong> ${data.czas}</p>
+    <p><strong>Doświadczenie:</strong> ${data.doswiadczenie}</p>
+    <p><strong>Preferencje treningowe:</strong> ${
+      data.preferencje_treningu1 ? data.preferencje_treningu1 + " " : ""
+    } ${data.preferencje_treningu2 ? data.preferencje_treningu2 + " " : ""} ${
+          data.preferencje_treningu3 ? data.preferencje_treningu3 : ""
+        }</p>
+</body>
+</html>`,
       };
 
       console.log(emailData);
@@ -63,3 +57,30 @@ router
   });
 
 module.exports = router;
+
+/* <pre>
+Imię: ${JSON.stringify(data.imie)}, 
+
+Nazwisko: ${JSON.stringify(data.nazwisko)}, 
+
+E-mail: ${JSON.stringify(data.email)}, 
+
+Telefon: ${JSON.stringify(data.phone)}, 
+
+Czas: ${JSON.stringify(data.czas)}, 
+
+Doświadczenie: ${JSON.stringify(data.doswiadczenie)}, 
+
+Preferencje treningowe: ${
+  data.preferencje_treningu1
+    ? JSON.stringify(data.preferencje_treningu1)
+    : ""
+} ${
+  data.preferencje_treningu2
+    ? JSON.stringify(data.preferencje_treningu2)
+    : ""
+} ${
+  data.preferencje_treningu3
+    ? JSON.stringify(data.preferencje_treningu3)
+    : ""
+}.</pre> */

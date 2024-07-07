@@ -1,6 +1,6 @@
 const express = require("express");
 const sgMail = require("@sendgrid/mail");
-const email = require("../email/email.js");
+const email = require("../email/email");
 
 const router = express.Router();
 sgMail.setApiKey(process.env.SENDGRID_PASSWORD);

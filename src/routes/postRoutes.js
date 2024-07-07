@@ -1,6 +1,6 @@
 const express = require("express");
 const sgMail = require("@sendgrid/mail");
-const email = require("./../email/email");
+const createEmailTemplate = require("./../email/email");
 
 const router = express.Router();
 sgMail.setApiKey(process.env.SENDGRID_PASSWORD);
@@ -15,12 +15,15 @@ router
     const data = req.body;
 
     try {
+      const data = req.body;
+      const emailHtml = createEmailTemplate(data);
+
       const emailData = {
         to: "bastete@o2.pl",
         from: "nekomimiwolf@gmail.com",
         subject: "Formularz Treningowy - Zgłoszenie",
         text: "New form submission",
-        html: email,
+        html: emailHtml,
       };
 
       console.log(emailData);

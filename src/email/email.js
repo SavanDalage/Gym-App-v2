@@ -1,4 +1,5 @@
-const email = `<!DOCTYPE html>
+const createEmailTemplate = (data) => {
+  return `<!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
@@ -46,10 +47,11 @@ const email = `<!DOCTYPE html>
         <p><span>Preferencje treningowe:</span> ${
           data.preferencje_treningu1 ? data.preferencje_treningu1 + " " : ""
         } ${
-  data.preferencje_treningu2 ? data.preferencje_treningu2 + " " : ""
-} ${data.preferencje_treningu3 ? data.preferencje_treningu3 : ""}</p>
+    data.preferencje_treningu2 ? data.preferencje_treningu2 + " " : ""
+  } ${data.preferencje_treningu3 ? data.preferencje_treningu3 : ""}</p>
     </div>
 </body>
 </html>`;
+};
 
-module.exports = email;
+module.exports = createEmailTemplate;

@@ -60,11 +60,10 @@ router
         .status(500)
         .json({ message: "Error sending email", error: error.toString() });
     }
-    // res.status(200).json({ message: "Formularz wysłany" });
   });
 
-router.route("/").get((req, res) => {
-  res.sendFile(path.join(publicPath, "index.html"));
-});
+// router.route("/").get((req, res) => {
+//   res.sendFile(path.join(publicPath, "index.html"));
+// });
 
 module.exports = router;

@@ -31,31 +31,31 @@ router
   })
   .post(
     // nowe start
-    body("name").isString().trim().escape(),
-    body("email").isEmail().normalizeEmail(),
-    body("message").isString().trim().escape(),
+    // body("name").isString().trim().escape(),
+    // body("email").isEmail().normalizeEmail(),
+    // body("message").isString().trim().escape(),
     // nowe -end
     async (req, res) => {
     console.log("POST /forms endpoint hit");
 
     // nowe - start
-    const errors = validationResult(req);
-    if (!errors.isEmpty()) {
-      return res.status(400).json({ errors: errors.array() });
-    }
+    // const errors = validationResult(req);
+    // if (!errors.isEmpty()) {
+    //   return res.status(400).json({ errors: errors.array() });
+    // }
     // nowe - end
 
     try {
-      // const data = req.body;
+      const data = req.body;
 
-      const sanitizedData = {
-        name: xssFilters.inHTMLData(req.body.name),
-        email: xssFilters.inHTMLData(req.body.email),
-        message: xssFilters.inHTMLData(req.body.message),
-      };
+      // const sanitizedData = {
+      //   name: xssFilters.inHTMLData(req.body.name),
+      //   email: xssFilters.inHTMLData(req.body.email),
+      //   message: xssFilters.inHTMLData(req.body.message),
+      // };
 
-      // const emailHtml = createEmailTemplate(data);
-      const emailHtml = createEmailTemplate(sanitizedData);
+      const emailHtml = createEmailTemplate(data);
+      // const emailHtml = createEmailTemplate(sanitizedData);
 
       const emailData = {
         to: "bastete@o2.pl",

@@ -25,8 +25,6 @@ router
         html: emailHtml,
       };
 
-// cso
-
       console.log(emailData);
 
       await sgMail.send(emailData);

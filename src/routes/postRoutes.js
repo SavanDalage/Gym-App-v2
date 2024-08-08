@@ -41,3 +41,30 @@ router
   });
 
 module.exports = router;
+
+/* <pre>
+Imię: ${JSON.stringify(data.imie)}, 
+
+Nazwisko: ${JSON.stringify(data.nazwisko)}, 
+
+E-mail: ${JSON.stringify(data.email)}, 
+
+Telefon: ${JSON.stringify(data.phone)}, 
+
+Czas: ${JSON.stringify(data.czas)}, 
+
+Doświadczenie: ${JSON.stringify(data.doswiadczenie)}, 
+
+Preferencje treningowe: ${
+  data.preferencje_treningu1
+    ? JSON.stringify(data.preferencje_treningu1)
+    : ""
+} ${
+  data.preferencje_treningu2
+    ? JSON.stringify(data.preferencje_treningu2)
+    : ""
+} ${
+  data.preferencje_treningu3
+    ? JSON.stringify(data.preferencje_treningu3)
+    : ""
+}.</pre> */

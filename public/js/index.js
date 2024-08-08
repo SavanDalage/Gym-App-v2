@@ -35,7 +35,7 @@ function intersectionCallback(entries) {
   });
 }
 
-// Intersection Observer callback dla opacity /////////////////////////////////////////////////////
+// Intersection Observer callback dla opacity
 
 function handleIntersect(entries) {
   const isSmallScreen = matchMedia(
@@ -93,7 +93,7 @@ createObservers();
 // sprawdzanie zmiany wysokości strony
 window.addEventListener("resize", createObservers);
 
-// SPRZĘT DO ĆWICZEŃ //////////////////////////////////////////////////////////////////////////
+// SPRZĘT DO ĆWICZEŃ
 
 function newPath(path, replacement) {
   let firstPart = path.substring(0, path.length - 7);

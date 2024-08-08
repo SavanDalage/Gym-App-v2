@@ -1,6 +1,6 @@
 const path = require("path");
 const express = require("express");
-// const rateLimit = require("express-rate-limit");
+const rateLimit = require("express-rate-limit");
 const cors = require("cors");
 const xss = require("xss-clean");
 const mongoSanitize = require("express-mongo-sanitize");
@@ -38,12 +38,12 @@ app.options("*", cors(corsOptions));
 // Data sanitization against XSS
 app.use(xss());
 
-// const limiter = rateLimit({
-//   max: 100,
-//   windowMs: 60 * 60 * 1000,
-//   message: "Too many requests from this IP, please try again in an hour!",
-// });
-// app.use("/", limiter);
+const limiter = rateLimit({
+  max: 100,
+  windowMs: 60 * 60 * 1000,
+  message: "Too many requests from this IP, please try again in an hour!",
+});
+app.use("/", limiter);
 
 // Define routes
 

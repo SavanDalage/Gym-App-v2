@@ -1,5 +1,11 @@
 // formularz.js
 
+function sanitizeInput(input) {
+  const tempDiv = document.createElement("div");
+  tempDiv.textContent = input;
+  return tempDiv.innerHTML;
+}
+
 const form = document.getElementById("training-form");
 const resetBtn = document.getElementById("reset-btn");
 
@@ -14,13 +20,15 @@ form.addEventListener("submit", (event) => {
   const data = {};
 
   formData.forEach((value, key) => {
+    const sanitizedValue = sanitizeInput(value);
+
     if (data[key]) {
       if (!Array.isArray(data[key])) {
         data[key] = [data[key]];
       }
-      data[key].push(value);
+      data[key].push(sanitizedValue);
     } else {
-      data[key] = value;
+      data[key] = sanitizedValue;
     }
   });
 

@@ -2,8 +2,12 @@ const express = require("express");
 const sgMail = require("@sendgrid/mail");
 const createEmailTemplate = require("./../email/email");
 
+const helmet = require("helmet");
+
 const router = express.Router();
 sgMail.setApiKey(process.env.SENDGRID_PASSWORD);
+
+router.use(helmet());
 
 router
   .route("/")

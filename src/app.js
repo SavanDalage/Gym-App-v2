@@ -9,16 +9,12 @@ const postRouter = require("./routes/postRoutes");
 
 const app = express();
 
-// Middleware to serve static files
 app.use(express.static(path.join(__dirname, "../public")));
-
-// Middleware to parse JSON request bodies
 app.use(express.json());
-
-// Data sanitization against NoSQL query injection
 app.use(mongoSanitize());
+app.use(xss());
 
-// CORS section
+// CORS
 const corsOptions = {
   origin: "*",
   methods: "GET, POST, PUT, DELETE, PATCH, OPTIONS",
@@ -29,14 +25,12 @@ const corsOptions = {
   optionsSuccessStatus: 204,
 };
 
-// Apply CORS middleware
+//  CORS middleware
 app.use(cors(corsOptions));
 
-// Handle preflight requests
 app.options("*", cors(corsOptions));
 
-// Data sanitization against XSS
-app.use(xss());
+
 
 const limiter = rateLimit({
   max: 100,
@@ -45,8 +39,7 @@ const limiter = rateLimit({
 });
 app.use("/", limiter);
 
-// Define routes
-
+// routes
 app.use("/", postRouter);
 
 module.exports = app;
